@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Models\Categoryt;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use File;
@@ -22,8 +22,9 @@ class ProductController extends Controller
     public function createfrom()
     {
         $category = Category::all();
-        return view('backend.product.createfrom');
+        return view('backend.product.createfrom',compact('category'));
     }
+
 
     public function edit($product_id)
     {
@@ -69,7 +70,7 @@ class ProductController extends Controller
         return redirect('admin/product/index');
     }
 
-  
+
     public function update(Request $request, $product_id){
         $pro = Product::find($product_id);
 

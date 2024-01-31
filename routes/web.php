@@ -51,3 +51,4 @@ Route::get('admin/product/createfrom',[ProductController::class, 'createfrom'])-
 Route::get('admin/product/edit/{id}',[Productcontroller::class, 'edit'])->name('p.edit');
 Route::post('admin/product/update/{id}',[Productcontroller::class, 'update']);
 Route::get('admin/product/delete/{id}',[Productcontroller::class, 'delete']);
+Route::post('admin/product/insert',[ProductController::class, 'insert']);

@@ -29,7 +29,6 @@
                                     <input
                                       type="text"
                                       name="price"
-                                      value="{{ $pro->price }}"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกราคาสินค้า"
@@ -40,7 +39,6 @@
                                     <input
                                       type="text"
                                       name="description"
-                                      value="{{ $pro->description }}"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกรายละเอียดสินค้า"
@@ -57,14 +55,14 @@
                                     <select name="category_id" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
                                       <option selected>กรุณาเลือกประเภทสินค้า</option>
                                       @foreach ($category as $cat)
-                                      <option value="{{ $cat->category_id">{{ $cat->name }} }}"</option>
+                                      <option value={{$cat->category_id}}>{{ $cat->name }}</option>
                                       @endforeach
                                     </select>
 
 
                                     <label for="defaultFormControlInput" class="form-label">Images</label>
                                       <div class="input-group">
-                                        <input type="file" value="{{ $pro->image }}" name="image" class="form-control" id="inputGroupFile02" />
+                                        <input type="file"  name="image" class="form-control" id="inputGroupFile02" />
                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                       </div>
 
@@ -73,9 +71,7 @@
                                           <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                       </div>
-                                      <div class="mt-4">
-                                        <img src="{{ asset('backend/product/resize/'.$pro->image) }}">
-                                      </div>
+
 
                                     <input type="submit" value="บันทึก" class="btn btn-primary mt-3">
                                     <a href="{{ url ('admin/product/index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
